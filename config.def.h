@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "mononoki:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -95,9 +95,8 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-
   /* 8 normal colors */
-  [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+  [0] = "#141617", /* hard contrast: #1d2021 / soft contrast: #32302f */
   [1] = "#cc241d", /* red     */
   [2] = "#98971a", /* green   */
   [3] = "#d79921", /* yellow  */
@@ -105,10 +104,9 @@ static const char *colorname[] = {
   [5] = "#b16286", /* magenta */
   [6] = "#689d6a", /* cyan    */
   [7] = "#a89984", /* white   */
-
   /* 8 bright colors */
   [8]  = "#928374", /* black   */
-  [9]  = "#fb4934", /* red     */
+  [9]  = "#d75f5f", /* red     */
   [10] = "#b8bb26", /* green   */
   [11] = "#fabd2f", /* yellow  */
   [12] = "#83a598", /* blue    */
@@ -168,8 +166,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
-	{ ShiftMask,            Button5, kscrolldown,    {.i = 1} },
+	{ XK_NO_MOD,            Button4, kscrollup,      {.i = 3} },
+	{ XK_NO_MOD,            Button5, kscrolldown,    {.i = 3} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -187,8 +185,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_plus,        zoom,           {.f = +3} },
+	{ ControlMask,          XK_minus,       zoom,           {.f = -3} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
@@ -283,16 +281,16 @@ static Key key[] = {
 	{ XK_KP_Subtract,   XK_ANY_MOD,     "\033Om",       +2,    0},
 	{ XK_KP_Decimal,    XK_ANY_MOD,     "\033On",       +2,    0},
 	{ XK_KP_Divide,     XK_ANY_MOD,     "\033Oo",       +2,    0},
-	{ XK_KP_0,          XK_ANY_MOD,     "\033Op",       +2,    0},
-	{ XK_KP_1,          XK_ANY_MOD,     "\033Oq",       +2,    0},
-	{ XK_KP_2,          XK_ANY_MOD,     "\033Or",       +2,    0},
-	{ XK_KP_3,          XK_ANY_MOD,     "\033Os",       +2,    0},
-	{ XK_KP_4,          XK_ANY_MOD,     "\033Ot",       +2,    0},
-	{ XK_KP_5,          XK_ANY_MOD,     "\033Ou",       +2,    0},
-	{ XK_KP_6,          XK_ANY_MOD,     "\033Ov",       +2,    0},
-	{ XK_KP_7,          XK_ANY_MOD,     "\033Ow",       +2,    0},
-	{ XK_KP_8,          XK_ANY_MOD,     "\033Ox",       +2,    0},
-	{ XK_KP_9,          XK_ANY_MOD,     "\033Oy",       +2,    0},
+	{ XK_KP_0,          XK_NO_MOD,     "\033Op",       +2,    0},
+	{ XK_KP_1,          XK_NO_MOD,     "\033Oq",       +2,    0},
+	{ XK_KP_2,          XK_NO_MOD,     "\033Or",       +2,    0},
+	{ XK_KP_3,          XK_NO_MOD,     "\033Os",       +2,    0},
+	{ XK_KP_4,          XK_NO_MOD,     "\033Ot",       +2,    0},
+	{ XK_KP_5,          XK_NO_MOD,     "\033Ou",       +2,    0},
+	{ XK_KP_6,          XK_NO_MOD,     "\033Ov",       +2,    0},
+	{ XK_KP_7,          XK_NO_MOD,     "\033Ow",       +2,    0},
+	{ XK_KP_8,          XK_NO_MOD,     "\033Ox",       +2,    0},
+	{ XK_KP_9,          XK_NO_MOD,     "\033Oy",       +2,    0},
 	{ XK_Up,            ShiftMask,      "\033[1;2A",     0,    0},
 	{ XK_Up,            Mod1Mask,       "\033[1;3A",     0,    0},
 	{ XK_Up,         ShiftMask|Mod1Mask,"\033[1;4A",     0,    0},
