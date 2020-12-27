@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Gohu GohuFont:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Gohu GohuFont:pixelsize=14";
 static int borderpx = 2;
 
 /*
@@ -103,7 +103,7 @@ static const char *colorname[] = {
   [4] = "#7daea3", /* blue    */
   [5] = "#d3869b", /* magenta */
   [6] = "#89b482", /* cyan    */
-  [7] = "#d4be98", /* white   */
+  [7] = "#e2cca9", /* white   */
   /* 8 bright colors */
   [8] = "#928374", /* hard contrast: #1d2021 / soft contrast: #32302f */
   [9] = "#ea6962", /* red     */
@@ -112,7 +112,7 @@ static const char *colorname[] = {
   [12] = "#7daea3", /* blue    */
   [13] = "#d3869b", /* magenta */
   [14] = "#89b482", /* cyan    */
-  [15] = "#d4be98", /* white   */
+  [15] = "#e2cca9", /* white   */
 };
 
 /*
