@@ -5,7 +5,15 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Gohu GohuFont:pixelsize=14";
+static char *fonts[] = {
+    "Consolas:pixelsize=18:antialias=true:autohint=true",
+    "Gohu GohuFont:pixelsize=14:antialias=false:autohint=false",
+};
+static double defaultfontsizes[] = {
+    18.0,
+    14.0
+};
+static size_t currentfont = 0;
 static int borderpx = 2;
 
 /*
@@ -195,6 +203,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+    { TERMMOD,              XK_S,           cyclefonts,     {}        },
 };
 
 /*
